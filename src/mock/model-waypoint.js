@@ -9,3 +9,4 @@ export default class ModelWaypoint {
     return this.arrWaypoints;
   }
 }
+
