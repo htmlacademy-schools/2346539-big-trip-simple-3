@@ -22,3 +22,4 @@ export default class ModelOffers extends Observable {
     return this.#offers;
   }
 }
+
