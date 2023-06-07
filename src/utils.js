@@ -64,9 +64,25 @@ export function sample(array, k) {
   return result;
 }
 
-export function capitalize(string) {
-  if (!string) {
-    return '';
-  }
-  return string[0].toUpperCase() + string.substring(1).toLowerCase();
-}
+const isFuture = (date) => date && dayjs().isBefore(date, 'D');
+const isPast = (date) => date && dayjs().isAfter(date, 'D');
+
+const filter = {
+  [FilterType.FUTURE]: (waypoints) => waypoints.filter((waypoint) => isFuture(waypoint.dateFrom)),
+  [FilterType.EVERYTHING]: (waypoints) => waypoints,
+  [FilterType.PAST]: (waypoints) => waypoints.filter((waypoint) => isPast(waypoint.dateFrom)),
+};
+
+export {
+  getDateWithoutT,
+  getDateDayAndMo,
+  getDateWithT,
+  getTime,
+  getItemFromItemsById,
+  getDateYears,
+  isEsc,
+  makeFirstLetterUpperCase,
+  isDatesEqual,
+  filter
+};
+
