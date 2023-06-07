@@ -56,3 +56,4 @@ modelWaypoints.init()
   .finally(() => {
     render(newWaypointButtonComponent, placeForButton);
   });
+
